@@ -20,4 +20,31 @@ class UserBuilderTest {
 
         assertThat(user1).isInstanceOf(User.class);
     }
+
+    @Test
+    @DisplayName("빌더로 객체 생성시 각 변수의 값이 올바르게 들어가는지 확인")
+    void 변수_값_테스트() {
+        Long id = 1L;
+        String email = "abcd@gmail.com";
+        String nickName = "builder";
+        String password = "1234";
+        int age = 20;
+        int score = 80;
+
+        User user2 = new UserBuilder()
+                .id(id)
+                .email(email)
+                .nickName(nickName)
+                .password(password)
+                .age(age)
+                .score(score)
+                .build();
+
+        assertThat(user2.getId()).isEqualTo(id);
+        assertThat(user2.getNickName()).isEqualTo(nickName);
+        assertThat(user2.getEmail()).isEqualTo(email);
+        assertThat(user2.getPassword()).isEqualTo(password);
+        assertThat(user2.getAge()).isEqualTo(age);
+        assertThat(user2.getScore()).isEqualTo(score);
+    }
 }
