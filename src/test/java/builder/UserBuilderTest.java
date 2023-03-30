@@ -47,4 +47,15 @@ class UserBuilderTest {
         assertThat(user2.getAge()).isEqualTo(age);
         assertThat(user2.getScore()).isEqualTo(score);
     }
+
+    @Test
+    @DisplayName("변수 미할당 시 초기화 확인")
+    void 변수_초기화_테스트() {
+        User user3 = new UserBuilder()
+                .id(1L)
+                .build();
+
+        assertThat(user3.getEmail()).isNull();
+        assertThat(user3.getScore()).isEqualTo(0);
+    }
 }
