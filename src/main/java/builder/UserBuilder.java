@@ -29,6 +29,9 @@ public class UserBuilder {
     }
 
     public UserBuilder age(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("나이는 음수가 될 수 없습니다.");
+        }
         this.age = age;
         return this;
     }

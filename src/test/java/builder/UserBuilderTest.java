@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class UserBuilderTest {
     @Test
@@ -57,5 +58,13 @@ class UserBuilderTest {
 
         assertThat(user3.getEmail()).isNull();
         assertThat(user3.getScore()).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("유효성 검사")
+    void 유효성_검사() {
+        assertThatThrownBy(() -> {
+            new UserBuilder().age(-1).build();
+        }).isInstanceOf(IllegalArgumentException.class);
     }
 }
