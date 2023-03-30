@@ -16,4 +16,28 @@ public class User {
         this.age = age;
         this.score = score;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getScore() {
+        return score;
+    }
 }
