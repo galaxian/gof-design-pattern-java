@@ -23,4 +23,21 @@ public class TreePrototypeTest {
         assertThat(position).isEqualTo(plasticTree.getPosition());
         assertThat(otherPosition).isEqualTo(otherPlasticTree.getPosition());
     }
+
+    @Test
+    @DisplayName("pine tree 복제본 생성 후 position 비교")
+    void pine_tree_복제본_생성_테스트() {
+        double mass = 10.0;
+        double height = 3.7;
+        Position position = new Position(3, 7);
+        Position otherPosition = new Position(4, 8);
+
+        PineTree pineTree = new PineTree(mass, height);
+        pineTree.setPosition(position);
+        PineTree otherPineTree = new PineTree(mass, height);
+        otherPineTree.setPosition(otherPosition);
+
+        assertThat(position).isEqualTo(pineTree.getPosition());
+        assertThat(otherPosition).isEqualTo(otherPineTree.getPosition());
+    }
 }
