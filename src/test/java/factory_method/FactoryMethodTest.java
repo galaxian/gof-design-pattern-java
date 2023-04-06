@@ -14,4 +14,13 @@ public class FactoryMethodTest {
         assertThat(airplane).isInstanceOf(AirVehicle.class);
         assertThat(airplane).isInstanceOf(Airplane.class);
     }
+
+    @Test
+    @DisplayName("helicopter factory에서 생성한 airVehicle Instance의 타입 확인")
+    void HelicopterFactory_인스턴스의_타입확인() {
+        AirVehicleFactory factory = new HelicopterFactory();
+        AirVehicle helicopter = factory.createAirVehicle();
+        assertThat(helicopter).isInstanceOf(AirVehicle.class);
+        assertThat(helicopter).isInstanceOf(Helicopter.class);
+    }
 }
