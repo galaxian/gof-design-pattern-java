@@ -5,4 +5,9 @@ public class ElectricVehicleMotor implements Motor{
     public void equip() {
         System.out.println("전기차용 모터가 장착되었습니다.");
     }
+
+    @Override
+    public String type() {
+        return "Electric Motor";
+    }
 }

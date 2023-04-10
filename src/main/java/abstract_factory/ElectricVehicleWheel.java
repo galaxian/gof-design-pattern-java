@@ -5,4 +5,9 @@ public class ElectricVehicleWheel implements Wheel{
     public void equip() {
         System.out.println("전기차용 바퀴가 장착되었습니다.");
     }
+
+    @Override
+    public String type() {
+        return "Electric Wheel";
+    }
 }
