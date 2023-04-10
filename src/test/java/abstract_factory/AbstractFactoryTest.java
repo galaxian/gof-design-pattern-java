@@ -31,4 +31,17 @@ public class AbstractFactoryTest {
         assertThat(motor).isInstanceOf(ElectricVehicleMotor.class);
         assertThat(wheel).isInstanceOf(ElectricVehicleWheel.class);
     }
+
+    @Test()
+    @DisplayName("MotorVehicle의 메서드 동작 테스트")
+    void MotorVehicle의_메서드_동작_테스트() {
+        AbstractFactory abstractFactory;
+
+        abstractFactory = FactoryProvider.getFactory("motor");
+        Motor motor = abstractFactory.createMotor();
+        Wheel wheel = abstractFactory.createWheel();
+
+        assertThat(motor.type()).isEqualTo("Motor");
+        assertThat(wheel.type()).isEqualTo("Wheel");
+    }
 }
