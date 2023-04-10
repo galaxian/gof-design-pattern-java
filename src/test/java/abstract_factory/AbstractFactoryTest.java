@@ -16,7 +16,9 @@ public class AbstractFactoryTest {
         Wheel wheel = abstractFactory.createWheel();
 
         assertThat(motor).isInstanceOf(MotorVehicleMotor.class);
+        assertThat(motor).isNotInstanceOf(ElectricVehicleMotor.class);
         assertThat(wheel).isInstanceOf(MotorVehicleWheel.class);
+        assertThat(wheel).isNotInstanceOf(ElectricVehicleWheel.class);
     }
 
     @Test()
@@ -29,7 +31,9 @@ public class AbstractFactoryTest {
         Wheel wheel = abstractFactory.createWheel();
 
         assertThat(motor).isInstanceOf(ElectricVehicleMotor.class);
+        assertThat(motor).isNotInstanceOf(MotorVehicleMotor.class);
         assertThat(wheel).isInstanceOf(ElectricVehicleWheel.class);
+        assertThat(wheel).isNotInstanceOf(MotorVehicleWheel.class);
     }
 
     @Test()
