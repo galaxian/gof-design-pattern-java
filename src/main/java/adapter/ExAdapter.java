@@ -8,6 +8,8 @@ public class ExAdapter {
         transportations.add(new Bus("마을버스"));
         transportations.add(new Taxi("카카오 택시"));
 
+        transportations.add(new Adapter("민항기"));
+
         transportations.forEach(Transportation::runnable);
     }
 }
