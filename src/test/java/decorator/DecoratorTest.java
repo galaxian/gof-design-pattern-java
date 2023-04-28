@@ -3,6 +3,8 @@ package decorator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DecoratorTest {
@@ -25,5 +27,25 @@ public class DecoratorTest {
 
         assertThat(sideDecorator.getRowText(0)).isEqualTo('~' + test + '~');
         assertThat(sideDecorator.getRowText(1)).isEqualTo(null);
+    }
+
+    @Test
+    @DisplayName("BoxDecorator 문자열 출력 테스트")
+    void test3() {
+        String test = "Decorator Pattern Test";
+        SingleText singleText = new SingleText(test);
+        SideDecorator sideDecorator = new SideDecorator(singleText, '~');
+        BoxDecorator boxDecorator = new BoxDecorator(sideDecorator);
+
+        ArrayList<String> expectList = new ArrayList<>();
+        expectList.add('+' + "------------------------" + '+');
+        expectList.add("|~" + test + "~|");
+        expectList.add('+' + "------------------------" + '+');
+
+        int rowCnt = boxDecorator.getRowsCount();
+
+        for (int i = 0; i < rowCnt; i++) {
+            assertThat(boxDecorator.getRowText(i)).isEqualTo(expectList.get(i));
+        }
     }
 }
