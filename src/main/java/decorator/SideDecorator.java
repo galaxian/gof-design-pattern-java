@@ -25,6 +25,9 @@ public class SideDecorator extends Decorator{
 
     @Override
     public String getRowText(int row) {
+        if (item.getRowText(row) == null) {
+            return null;
+        }
         return sideChar + item.getRowText(row) + sideChar;
     }
 }
