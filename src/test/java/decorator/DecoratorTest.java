@@ -15,4 +15,15 @@ public class DecoratorTest {
         assertThat(singleText.getRowText(0)).isEqualTo(test);
         assertThat(singleText.getRowText(1)).isEqualTo(null);
     }
+
+    @Test
+    @DisplayName("sideDecorator 문자 추가 확인 및 유효 row 외 조회 테스트")
+    void test2() {
+        String test = "Decorator Pattern Test";
+        SingleText singleText = new SingleText(test);
+        SideDecorator sideDecorator = new SideDecorator(singleText, '~');
+
+        assertThat(sideDecorator.getRowText(0)).isEqualTo('~' + test + '~');
+        assertThat(sideDecorator.getRowText(1)).isEqualTo(null);
+    }
 }
