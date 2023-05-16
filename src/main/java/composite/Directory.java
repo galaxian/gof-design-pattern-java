@@ -22,7 +22,11 @@ public class Directory implements Node{
 
     @Override
     public int getSize() {
-        return 0;
+        int sum = 0;
+        for(Node node: list) {
+            sum += node.getSize();
+        }
+        return sum;
     }
 
     @Override
