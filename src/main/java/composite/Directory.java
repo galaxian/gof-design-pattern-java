@@ -31,5 +31,10 @@ public class Directory implements Node{
 
     @Override
     public void print() {
+        int folderSize = getSize();
+        System.out.println(getName() + " (" + folderSize + ")");
+        for(Node node: list) {
+            node.print();
+        }
     }
 }
