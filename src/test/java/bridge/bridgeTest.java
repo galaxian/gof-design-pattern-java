@@ -22,4 +22,20 @@ public class bridgeTest {
 
         assertThat(quotientCalculator.div(a, b)).isEqualTo(a / b);
     }
+
+    @Test
+    @DisplayName("4칙연산 테스트 및 div 메서드 나머지 계산 테스트")
+    void 나머지_계산테스트() {
+
+        int a = 7192;
+        int b = 332;
+
+        Calculator remainderCalculator = new Calculator(new RemainderCalculate());
+
+        assertThat(remainderCalculator.add(a, b)).isEqualTo(a + b);
+        assertThat(remainderCalculator.sub(a, b)).isEqualTo(a - b);
+        assertThat(remainderCalculator.mul(a, b)).isEqualTo(a * b);
+
+        assertThat(remainderCalculator.div(a, b)).isEqualTo(a % b);
+    }
 }
