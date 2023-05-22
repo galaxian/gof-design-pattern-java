@@ -19,7 +19,7 @@ public class Calculator {
         return calculate.mul(a, b);
     }
 
-    public double div(int a, int b) {
+    public int div(int a, int b) {
         return calculate.div(a, b);
     }
 

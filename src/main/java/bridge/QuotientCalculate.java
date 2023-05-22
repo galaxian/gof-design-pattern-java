@@ -1,6 +1,6 @@
 package bridge;
 
-public class CalculateImp implements Calculate{
+public class QuotientCalculate implements Calculate{
     @Override
     public int add(int a, int b) {
         return a + b;
@@ -17,7 +17,7 @@ public class CalculateImp implements Calculate{
     }
 
     @Override
-    public double div(int a, int b) {
-        return (double) a / (double)b;
+    public int div(int a, int b) {
+        return  a / b;
     }
 }
