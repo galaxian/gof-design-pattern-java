@@ -16,4 +16,15 @@ public class flyweightTest {
         assertThat(blackComputer).isNotNull();
         assertThat(whiteComputer).isNotEqualTo(blackComputer);
     }
+
+    @Test()
+    @DisplayName("같은 flyweight 객체끼리 equal 테스트")
+    void test2() {
+        ElectronicAppliance whiteComputer = ElectronicFactory.createElectronic("white");
+        ElectronicAppliance anotherWhiteComputer = ElectronicFactory.createElectronic("white");
+
+        assertThat(whiteComputer).isNotNull();
+        assertThat(anotherWhiteComputer).isNotNull();
+        assertThat(whiteComputer).isEqualTo(anotherWhiteComputer);
+    }
 }
