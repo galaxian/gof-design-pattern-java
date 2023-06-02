@@ -8,6 +8,12 @@ public class Computer implements ElectronicAppliance{
     public Computer(Controller controller, String color) {
         this.color = color;
         this.controller = controller;
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
